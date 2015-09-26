@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: squid
+  labels:
+    app: squid
+spec:
+  containers:
+  - name: squid
+    image: asia.gcr.io/gothic-province-823/squid:latest
+    # commands: ["bash", "/home/squid.sh"]
+    ports:
+    - containerPort: 3128

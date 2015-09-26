@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: squid
+  labels:
+    name: squid
+spec:
+  replicas: 4
+  selector:
+    name: squid
+  template:
+    metadata:
+      labels:
+        name: squid
+    spec:
+      containers:
+      - name: squid
+        image: asia.gcr.io/gothic-province-823/squid:latest
+        command: ["squid"]
+        ports:
+        - containerPort: 3128
